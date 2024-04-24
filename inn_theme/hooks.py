@@ -10,6 +10,8 @@ app_license = "MIT"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/inn_theme/css/inn_theme.css"
+app_include_css = ["inn_theme.bundle.css"]
+app_include_js = ["inn_theme_desk.bundle.js"]
 # app_include_js = "/assets/inn_theme/js/inn_theme.js"
 
 # include js, css files in header of web template
@@ -69,6 +71,10 @@ app_license = "MIT"
 
 # before_uninstall = "inn_theme.uninstall.before_uninstall"
 # after_uninstall = "inn_theme.uninstall.after_uninstall"
+
+after_migrate = [
+    "inn_theme.workspace_icon_set.update_workspace_images",
+]
 
 # Integration Setup
 # ------------------
@@ -156,6 +162,10 @@ app_license = "MIT"
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "inn_theme.event.get_events"
 # }
+override_whitelisted_methods = {
+    "frappe.desk.desktop.get_workspace_sidebar_items": "inn_theme.workspace_icon_set.get_workspace_sidebar_items",
+    "frappe.core.doctype.user.user.switch_theme": "inn_theme.core.doctype.user.user.switch_theme",
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
@@ -213,3 +223,10 @@ app_license = "MIT"
 # auth_hooks = [
 # 	"inn_theme.auth.validate"
 # ]
+
+fixtures = [
+    {
+        "dt": "Custom Field",
+        "filters": [["dt", "=", "Workspace"], ["is_system_generated", "=", 0]],
+    }
+]
