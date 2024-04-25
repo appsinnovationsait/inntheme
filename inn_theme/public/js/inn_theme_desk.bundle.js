@@ -50,9 +50,9 @@ frappe.ui.ThemeSwitcher = class Custom_ThemeSwitcher extends frappe.ui.ThemeSwit
                     info: __("Inn Blue"),
                 },
                 {
-                    name: "InnThemePurple",
-                    label: __("Inn Purple"),
-                    info: __("Inn Purple"),
+                    name: "InnThemePeach",
+                    label: __("Inn Peach"),
+                    info: __("Inn Peach"),
                 },
                 {
                     name: "light",

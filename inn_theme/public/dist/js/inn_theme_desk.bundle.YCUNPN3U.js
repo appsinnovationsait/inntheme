@@ -23,5 +23,5 @@
 				</div>
 				<div class="sidebar-child-item nested-container"></div>
 			</div>
-		`)}};frappe.ui.ThemeSwitcher=class extends frappe.ui.ThemeSwitcher{fetch_themes(){return new Promise(e=>{this.themes=[{name:"InnTheme",label:__("Inn Cyan"),info:__("Inn Cyan")},{name:"InnThemeBlue",label:__("Inn Blue"),info:__("Inn Blue")},{name:"InnThemePurple",label:__("Inn Purple"),info:__("Inn Purple")},{name:"light",label:__("Frappe Light"),info:__("Light Theme")},{name:"dark",label:__("Timeless Night"),info:__("Dark Theme")},{name:"automatic",label:__("Automatic"),info:__("Uses system's theme to switch between light and dark mode")}],e(this.themes)})}};})();
-//# sourceMappingURL=inn_theme_desk.bundle.KGZXGUQD.js.map
+		`)}};frappe.ui.ThemeSwitcher=class extends frappe.ui.ThemeSwitcher{fetch_themes(){return new Promise(e=>{this.themes=[{name:"InnTheme",label:__("Inn Cyan"),info:__("Inn Cyan")},{name:"InnThemeBlue",label:__("Inn Blue"),info:__("Inn Blue")},{name:"InnThemePeach",label:__("Inn Peach"),info:__("Inn Peach")},{name:"light",label:__("Frappe Light"),info:__("Light Theme")},{name:"dark",label:__("Timeless Night"),info:__("Dark Theme")},{name:"automatic",label:__("Automatic"),info:__("Uses system's theme to switch between light and dark mode")}],e(this.themes)})}};})();
+//# sourceMappingURL=inn_theme_desk.bundle.YCUNPN3U.js.map
