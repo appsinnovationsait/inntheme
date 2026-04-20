@@ -1,3 +1,5 @@
+/*
+
 [data-theme="inntheme"] {
 
     // innovation-sa
@@ -476,6 +478,7 @@
     }
 
 }
+
 [data-theme="innthemeblue"] {
 
     // innovation-sa
@@ -1432,4 +1435,655 @@
         // border-width: var(--form-control-border-width);
     }
 
+}
+
+*/
+
+[data-theme="inntheme"] {
+
+    // Fresh Cyan Theme
+    --base-color: #06b5d4; // Primary Cyan Accent
+    --secondary-color: #E6F7FA; // Subtle Cyan / Hover
+    --navbar-bg: white;
+    --brand-color: var(--base-color);
+    --primary-color: var(--base-color);
+    --primary: var(--base-color);
+    --highlight-color: var(--secondary-color);
+    --table-header: var(--primary);
+    --bg-color: #f9fafb; // Background different from white divs
+    --heading-color: #333333;
+    --scrollbar-color: #D1F0F7;
+
+    // Form and input variables
+    --field-border: #E5E7EB;
+    --field-label: #4B5563;
+    --input-disabled-bg: #F9FAFB;
+    --disabled-control-bg: #F9FAFB;
+    --disabled-text-color: #9CA3AF;
+
+    // Sidebar and Workspace navigation
+    --side-section-background-color: white;
+    --workspace-menu-color: white;
+    --sidebar-select-color: #F3F4F6;
+    --side-section-menu-text-color: #374151;
+    --sidebar-hover-color: var(--base-color);
+    --sidebar-hover-text-color: white;
+    --sidebar-selected-color: var(--base-color);
+    --side-section-menu-selected-text-color: white;
+    --side-section-text-and-icon-color: #4B5563;
+    --skeleton-bg: white;
+    --navbar-text-color: #111827;
+    --navbar-icon-color: #4B5563;
+    --form-control-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --border-size: 1px;
+    --form-control-focus-shadow: 0 0 0 3px rgba(6, 181, 212, 0.2);
+    --links-widget-bg: white;
+    --links-widget-text-color: #374151;
+    --links-widget-text-hover-color: var(--base-color);
+    --widget-title-hover-color: var(--base-color);
+    --nav-link-active-color: var(--base-color);
+    --workspace-border-color: var(--secondary-color);
+
+    .head-title,
+    .comment-box .comment-input-header,
+    .form-section .section-head,
+    .form-dashboard-section .section-head {
+        --heading-color: #111827;
+    }
+
+    .control-label,
+    .grid-heading-row {
+        font-size: var(--text-md);
+    }
+
+    .navbar-home img {
+        max-height: 40px;
+        width: auto;
+    }
+
+    // Widget styling
+    .widget.shortcut-widget-box:not(.edit-mode),
+    .widget.links-widget-box:not(.edit-mode) {
+        --card-bg: var(--links-widget-bg);
+        --text-color: var(--links-widget-text-color);
+        --heading-color: var(--links-widget-text-color);
+        --icon-stroke: var(--links-widget-text-color);
+        --fg-hover-color: var(--primary);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        border: var(--border-size) solid var(--workspace-border-color);
+        padding: 16px;
+        transition: all 0.2s ease;
+
+        &:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .icon {
+            stroke-width: 1.5px;
+            fill: transparent;
+        }
+    }
+
+    .widget.number-widget-box,
+    .widget.dashboard-widget-box {
+        border: var(--border-size) solid var(--workspace-border-color);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .widget.links-widget-box .link-item {
+        padding: 8px;
+        border-radius: var(--border-radius-sm);
+    }
+
+    .widget.links-widget-box:not(.edit-mode) .link-item:hover {
+        background-color: var(--secondary-color);
+        --text-color: var(--base-color);
+        --icon-stroke: var(--base-color);
+    }
+
+    .layout-side-section {
+        padding-top: 15px;
+        border-radius: var(--border-radius-md);
+        --text-light: var(--side-section-text-and-icon-color);
+        --text-muted: var(--side-section-text-and-icon-color);
+        --icon-stroke: var(--side-section-text-and-icon-color);
+        --heading-color: var(--side-section-text-and-icon-color);
+
+        @media screen and (min-width: 992px) {
+            flex: 0 0 260px; // Increased width from default
+            max-width: 260px;
+            background-color: var(--side-section-background-color);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius-lg);
+            padding: 16px;
+        }
+    }
+
+    .navbar {
+        .nav-link {
+            --text-color: var(--navbar-text-color);
+            --text-muted: var(--navbar-text-color);
+        }
+
+        --icon-stroke: var(--navbar-icon-color);
+    }
+
+    .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: white;
+
+        &:hover,
+        &:active,
+        &.active {
+            background-color: darken(#06b5d4, 5%) !important;
+            border-color: darken(#06b5d4, 5%) !important;
+        }
+    }
+
+    .section-body .form-grid .grid-heading-row,
+    .frappe-list .level.list-row-head {
+        background-color: var(--table-header);
+        color: #ffffff !important;
+
+        // Ensure all nested text and icons are white
+        &,
+        .level-item,
+        .list-row-col,
+        span,
+        a,
+        div {
+            color: #ffffff !important;
+        }
+
+        .icon,
+        svg,
+        .level-right {
+            --icon-stroke: white !important;
+            stroke: white !important;
+        }
+    }
+
+    .form-tabs-list .form-tabs .nav-item .nav-link.active {
+        color: var(--nav-link-active-color);
+        border-bottom: 2px solid var(--nav-link-active-color);
+    }
+
+    // Scrollbar styling
+    .layout-main {
+
+        .layout-side-section,
+        .layout-main-section-wrapper {
+            scrollbar-color: var(--scrollbar-color) transparent;
+
+            &::-webkit-scrollbar-thumb {
+                background: var(--scrollbar-color);
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .standard-sidebar .standard-sidebar-item,
+    .desk-sidebar .standard-sidebar-item {
+        border-radius: var(--border-radius-md);
+        margin: 4px 0;
+        transition: all 0.2s ease;
+
+        a {
+            padding: 10px 15px !important; // More internal padding
+            display: flex;
+            align-items: center;
+            text-decoration: none !important;
+        }
+
+        &:hover:not(.selected) {
+            background-color: var(--secondary-color) !important;
+            --text-color: var(--base-color) !important;
+            --icon-stroke: var(--base-color) !important;
+
+            a {
+                color: var(--base-color) !important;
+            }
+        }
+
+        &.selected {
+            background-color: var(--base-color);
+            --icon-stroke: white;
+
+            a {
+                color: white !important;
+            }
+        }
+    }
+}
+
+[data-theme="innthemeblue"] {
+
+    // Fresh Blue Theme
+    --base-color: #465fff; // Primary Blue Accent
+    --secondary-color: #f0f2ff; // Subtle Blue / Hover
+    --navbar-bg: white;
+    --brand-color: var(--base-color);
+    --primary-color: var(--base-color);
+    --primary: var(--base-color);
+    --highlight-color: var(--secondary-color);
+    --table-header: var(--primary);
+    --bg-color: #f9fafb; // Background different from white divs
+    --heading-color: #333333;
+    --scrollbar-color: #dce1ff;
+
+    // Form and input variables
+    --field-border: #E5E7EB;
+    --field-label: #4B5563;
+    --input-disabled-bg: #F9FAFB;
+    --disabled-control-bg: #F9FAFB;
+    --disabled-text-color: #9CA3AF;
+
+    // Sidebar and Workspace navigation
+    --side-section-background-color: white;
+    --workspace-menu-color: white;
+    --sidebar-select-color: #F3F4F6;
+    --side-section-menu-text-color: #374151;
+    --sidebar-hover-color: var(--base-color);
+    --sidebar-hover-text-color: white;
+    --sidebar-selected-color: var(--base-color);
+    --side-section-menu-selected-text-color: white;
+    --side-section-text-and-icon-color: #4B5563;
+    --skeleton-bg: white;
+    --navbar-text-color: #111827;
+    --navbar-icon-color: #4B5563;
+    --form-control-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --border-size: 1px;
+    --form-control-focus-shadow: 0 0 0 3px rgba(70, 95, 255, 0.2);
+    --links-widget-bg: white;
+    --links-widget-text-color: #374151;
+    --links-widget-text-hover-color: var(--base-color);
+    --widget-title-hover-color: var(--base-color);
+    --nav-link-active-color: var(--base-color);
+    --workspace-border-color: var(--secondary-color);
+
+    .head-title,
+    .comment-box .comment-input-header,
+    .form-section .section-head,
+    .form-dashboard-section .section-head {
+        --heading-color: #111827;
+    }
+
+    .control-label,
+    .grid-heading-row {
+        font-size: var(--text-md);
+    }
+
+    .navbar-home img {
+        max-height: 40px;
+        width: auto;
+    }
+
+    // Widget styling
+    .widget.shortcut-widget-box:not(.edit-mode),
+    .widget.links-widget-box:not(.edit-mode) {
+        --card-bg: var(--links-widget-bg);
+        --text-color: var(--links-widget-text-color);
+        --heading-color: var(--links-widget-text-color);
+        --icon-stroke: var(--links-widget-text-color);
+        --fg-hover-color: var(--primary);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        border: var(--border-size) solid var(--workspace-border-color);
+        padding: 16px;
+        transition: all 0.2s ease;
+
+        &:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .icon {
+            stroke-width: 1.5px;
+            fill: transparent;
+        }
+    }
+
+    .widget.number-widget-box,
+    .widget.dashboard-widget-box {
+        border: var(--border-size) solid var(--workspace-border-color);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .widget.links-widget-box .link-item {
+        padding: 8px;
+        border-radius: var(--border-radius-sm);
+    }
+
+    .widget.links-widget-box:not(.edit-mode) .link-item:hover {
+        background-color: var(--secondary-color);
+        --text-color: var(--base-color);
+        --icon-stroke: var(--base-color);
+    }
+
+    .layout-side-section {
+        padding-top: 15px;
+        border-radius: var(--border-radius-md);
+        --text-light: var(--side-section-text-and-icon-color);
+        --text-muted: var(--side-section-text-and-icon-color);
+        --icon-stroke: var(--side-section-text-and-icon-color);
+        --heading-color: var(--side-section-text-and-icon-color);
+
+        @media screen and (min-width: 992px) {
+            flex: 0 0 260px; // Increased width from default
+            max-width: 260px;
+            background-color: var(--side-section-background-color);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius-lg);
+            padding: 16px;
+        }
+    }
+
+    .navbar {
+        .nav-link {
+            --text-color: var(--navbar-text-color);
+            --text-muted: var(--navbar-text-color);
+        }
+
+        --icon-stroke: var(--navbar-icon-color);
+    }
+
+    .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: white;
+
+        &:hover,
+        &:active,
+        &.active {
+            background-color: darken(#465fff, 5%) !important;
+            border-color: darken(#465fff, 5%) !important;
+        }
+    }
+
+    .section-body .form-grid .grid-heading-row,
+    .frappe-list .level.list-row-head {
+        background-color: var(--table-header);
+        color: #ffffff !important;
+
+        // Ensure all nested text and icons are white
+        &,
+        .level-item,
+        .list-row-col,
+        span,
+        a,
+        div {
+            color: #ffffff !important;
+        }
+
+        .icon,
+        svg,
+        .level-right {
+            --icon-stroke: white !important;
+            stroke: white !important;
+        }
+    }
+
+    .form-tabs-list .form-tabs .nav-item .nav-link.active {
+        color: var(--nav-link-active-color);
+        border-bottom: 2px solid var(--nav-link-active-color);
+    }
+
+    // Scrollbar styling
+    .layout-main {
+
+        .layout-side-section,
+        .layout-main-section-wrapper {
+            scrollbar-color: var(--scrollbar-color) transparent;
+
+            &::-webkit-scrollbar-thumb {
+                background: var(--scrollbar-color);
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .standard-sidebar .standard-sidebar-item,
+    .desk-sidebar .standard-sidebar-item {
+        border-radius: var(--border-radius-md);
+        margin: 4px 0;
+        transition: all 0.2s ease;
+
+        a {
+            padding: 10px 15px !important; // More internal padding
+            display: flex;
+            align-items: center;
+            text-decoration: none !important;
+        }
+
+        &:hover:not(.selected) {
+            background-color: var(--secondary-color) !important;
+            --text-color: var(--base-color) !important;
+            --icon-stroke: var(--base-color) !important;
+
+            a {
+                color: var(--base-color) !important;
+            }
+        }
+
+        &.selected {
+            background-color: var(--base-color);
+            --icon-stroke: white;
+
+            a {
+                color: white !important;
+            }
+        }
+    }
+}
+
+[data-theme="innthemepeach"] {
+
+    --base-color: #FF8C69;
+    --secondary-color: #FFF0EB;
+    --navbar-bg: white;
+    --brand-color: var(--base-color);
+    --primary-color: var(--base-color);
+    --primary: var(--base-color);
+    --highlight-color: var(--secondary-color);
+    --table-header: var(--primary);
+    --bg-color: #f9fafb;
+    --heading-color: #333333;
+    --scrollbar-color: #FFE5D9;
+
+    // Form and input variables
+    --field-border: #E5E7EB;
+    --field-label: #4B5563;
+    --input-disabled-bg: #F9FAFB;
+    --disabled-control-bg: #F9FAFB;
+    --disabled-text-color: #9CA3AF;
+
+    // Sidebar and Workspace navigation
+    --side-section-background-color: white;
+    --workspace-menu-color: white;
+    --sidebar-select-color: #F3F4F6;
+    --side-section-menu-text-color: #374151;
+    --sidebar-hover-color: var(--base-color);
+    --sidebar-hover-text-color: white;
+    --sidebar-selected-color: var(--base-color);
+    --side-section-menu-selected-text-color: white;
+    --side-section-text-and-icon-color: #4B5563;
+    --skeleton-bg: white;
+    --navbar-text-color: #111827;
+    --navbar-icon-color: #4B5563;
+    --form-control-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --border-size: 1px;
+    --form-control-focus-shadow: 0 0 0 3px rgba(255, 140, 105, 0.2);
+    --links-widget-bg: white;
+    --links-widget-text-color: #374151;
+    --links-widget-text-hover-color: var(--base-color);
+    --widget-title-hover-color: var(--base-color);
+    --nav-link-active-color: var(--base-color);
+    --workspace-border-color: var(--secondary-color);
+
+    .head-title,
+    .comment-box .comment-input-header,
+    .form-section .section-head,
+    .form-dashboard-section .section-head {
+        --heading-color: #111827;
+    }
+
+    .control-label,
+    .grid-heading-row {
+        font-size: var(--text-md);
+    }
+
+    .navbar-home img {
+        max-height: 40px;
+        width: auto;
+    }
+
+    // Widget styling
+    .widget.shortcut-widget-box:not(.edit-mode),
+    .widget.links-widget-box:not(.edit-mode) {
+        --card-bg: var(--links-widget-bg);
+        --text-color: var(--links-widget-text-color);
+        --heading-color: var(--links-widget-text-color);
+        --icon-stroke: var(--links-widget-text-color);
+        --fg-hover-color: var(--primary);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        border: var(--border-size) solid var(--workspace-border-color);
+        padding: 16px;
+        transition: all 0.2s ease;
+
+        &:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .icon {
+            stroke-width: 1.5px;
+            fill: transparent;
+        }
+    }
+
+    .widget.number-widget-box,
+    .widget.dashboard-widget-box {
+        border: var(--border-size) solid var(--workspace-border-color);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .widget.links-widget-box .link-item {
+        padding: 8px;
+        border-radius: var(--border-radius-sm);
+    }
+
+    .widget.links-widget-box:not(.edit-mode) .link-item:hover {
+        background-color: var(--secondary-color);
+        --text-color: var(--base-color);
+        --icon-stroke: var(--base-color);
+    }
+
+    .layout-side-section {
+        padding-top: 15px;
+        border-radius: var(--border-radius-md);
+        --text-light: var(--side-section-text-and-icon-color);
+        --text-muted: var(--side-section-text-and-icon-color);
+        --icon-stroke: var(--side-section-text-and-icon-color);
+        --heading-color: var(--side-section-text-and-icon-color);
+
+        @media screen and (min-width: 992px) {
+            flex: 0 0 260px; // Increased width from default
+            max-width: 260px;
+            background-color: var(--side-section-background-color);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius-lg);
+            padding: 16px; // More padding for the container
+        }
+    }
+
+    .navbar {
+        .nav-link {
+            --text-color: var(--navbar-text-color);
+            --text-muted: var(--navbar-text-color);
+        }
+
+        --icon-stroke: var(--navbar-icon-color);
+    }
+
+    .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: white;
+
+        &:hover,
+        &:active,
+        &.active {
+            background-color: darken(#FF8C69, 5%) !important;
+            border-color: darken(#FF8C69, 5%) !important;
+        }
+    }
+
+    .section-body .form-grid .grid-heading-row,
+    .frappe-list .level.list-row-head {
+        background-color: var(--table-header);
+        color: #ffffff !important;
+
+        // Ensure all nested text and icons are white
+        &,
+        .level-item,
+        .list-row-col,
+        span,
+        a,
+        div {
+            color: #ffffff !important;
+        }
+
+        .icon,
+        svg,
+        .level-right {
+            --icon-stroke: white !important;
+            stroke: white !important;
+        }
+    }
+
+    .form-tabs-list .form-tabs .nav-item .nav-link.active {
+        color: var(--nav-link-active-color);
+        border-bottom: 2px solid var(--nav-link-active-color);
+    }
+
+    // Scrollbar styling
+    .layout-main {
+
+        .layout-side-section,
+        .layout-main-section-wrapper {
+            scrollbar-color: var(--scrollbar-color) transparent;
+
+            &::-webkit-scrollbar-thumb {
+                background: var(--scrollbar-color);
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .standard-sidebar .standard-sidebar-item,
+    .desk-sidebar .standard-sidebar-item {
+        border-radius: var(--border-radius-md);
+        margin: 4px 0;
+        transition: all 0.2s ease;
+
+        &:hover:not(.selected) {
+            background-color: var(--secondary-color) !important;
+            --text-color: var(--base-color) !important;
+            --icon-stroke: var(--base-color) !important;
+
+            a {
+                color: var(--base-color) !important;
+            }
+        }
+
+        &.selected {
+            background-color: var(--sidebar-selected-color);
+            --icon-stroke: white;
+
+            a {
+                color: white !important;
+            }
+        }
+    }
 }
